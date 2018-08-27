@@ -1,4 +1,0 @@
-{"type":"analytics.appRunning.v1","msg":{"ts":1535324222797,"duration":2098,"local_time_offset":0}}
-{"type":"analytics.custom.v1","msg":{"ts":1535324491343,"name":"level_complete","custom_params":{"level_name":"2000s Solo Medley","stars":2,"score":202027,"artist":"Various Artists","song":"2000s Solo Medley","year":"2000s","genre":"Various Genres","charter":"Siavash, 2DHumanity, Chezy, Sygenysis","has_bots":false}}}
-{"type":"analytics.appRunning.v1","msg":{"ts":1535324498362,"duration":2373,"local_time_offset":0}}
-(1){"type":"analytics.appStop.v1","msg":{"ts":1535324498362}}
