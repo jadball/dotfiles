@@ -1,0 +1,14 @@
+<unity_prefs version_major="1" version_minor="1">
+	<pref name="RewiredSaveData_ControllerAssignments" type="string">eyJwbGF5ZXJzIjpbeyJpZCI6OTk5OTk5OSwiaGFzS2V5Ym9hcmQiOnRydWUsImhhc01vdXNlIjp0cnVlLCJqb3lzdGlja3MiOltdfSx7ImlkIjowLCJoYXNLZXlib2FyZCI6dHJ1ZSwiaGFzTW91c2UiOnRydWUsImpveXN0aWNrcyI6W119LHsiaWQiOjEsImhhc0tleWJvYXJkIjpmYWxzZSwiaGFzTW91c2UiOmZhbHNlLCJqb3lzdGlja3MiOlt7Imluc3RhbmNlR3VpZCI6IjRkOWI1ZmQ0LTM0YmQtOTJiMi02NzUxLWNhNDBhNWFjYzkzNCIsImhhcmR3YXJlSWRlbnRpZmllciI6IkxpbnV4TGludXhHdWl0YXJIZXJvWC1wbG9yZXIxODI0ODQ3NDgxNDMwLTAwMDAtMDAwMC0wMDAwLTUwNDk0NDU2NDk0NCIsImlkIjowfV19LHsiaWQiOjIsImhhc0tleWJvYXJkIjpmYWxzZSwiaGFzTW91c2UiOmZhbHNlLCJqb3lzdGlja3MiOltdfSx7ImlkIjozLCJoYXNLZXlib2FyZCI6ZmFsc2UsImhhc01vdXNlIjpmYWxzZSwiam95c3RpY2tzIjpbXX1dfQ==</pref>
+	<pref name="Screenmanager Fullscreen mode" type="int">1</pref>
+	<pref name="Screenmanager Resolution Height" type="int">1080</pref>
+	<pref name="Screenmanager Resolution Width" type="int">1920</pref>
+	<pref name="UnitySelectMonitor" type="int">0</pref>
+	<pref name="data.analyticsEnabled" type="int">1</pref>
+	<pref name="data.deviceStatsEnabled" type="int">1</pref>
+	<pref name="data.limitUserTracking" type="int">0</pref>
+	<pref name="data.optOut" type="int">0</pref>
+	<pref name="data.performanceReportingEnabled" type="int">1</pref>
+	<pref name="unity.cloud_userid" type="string">ZjI1ZDU3YzE0Y2YwNTRmMmJhZTg5NmEwNzYyZTJmZjE=</pref>
+	<pref name="unity.player_sessionid" type="string">ODM0NTc3ODQwMjMxOTgxNjcxNQ==</pref>
+</unity_prefs>
