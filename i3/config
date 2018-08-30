@@ -25,8 +25,6 @@ font pango:"Noto Sans Display" 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-hide_edge_borders both
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -182,20 +180,13 @@ bar {
 }
 }
 
-#custom
+#applets
 exec --no-startup-id nm-applet
 exec mpd
-
-#volume
-
 exec volumeicon
+exec blueman-applet
 
-#lock
-#exec --no-startup-id i3lock -i ~/Wallpapers/44797-arch-linux-on-colorful-stripes-1280x800-computer-wallpaper.png -t
-#exec --no-startup-id xautolock -time 10 -locker "i3lock -i ~/Wallpapers/44797-arch-linux-on-colorful-stripes-1280x800-computer-wallpaper.png -t" &
-#exec --no-startup-id xss-lock -- i3lock -n -i ~/Wallpapers/44797-arch-linux-on-colorful-stripes-1280x800-computer-wallpaper.png -t &
-
-exec_always compton -b
+#colours
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -203,16 +194,25 @@ set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color #E53935
 
+#screens
+
 exec_always feh --bg-scale /home/james/Wallpapers/astolfo.png
 exec ~/.screenlayout/3_right_monitors.sh
+exec_always compton -b
+
+#i3-gaps settings
 
 gaps inner 10
 gaps outer 0
 smart_gaps on
 smart_borders no_gaps
+for_window [class=".*"] border pixel 0
+hide_edge_borders both
+
+#floating fixes
 
 for_window [class="^Steam$" title="^Friends List - *"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title="Steam - News*"] floating enable
 for_window [class="^Steam$" title=".* - Chat"] floating enable
 for_window [class="^Steam$" title="^Settings$"] floating enable
 for_window [class="^Steam$" title=".* - event started"] floating enable
@@ -221,4 +221,38 @@ for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
 for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
-for_window [class="^Steam$" title="Steam"] floating disable
+for_window [class="^Steam$" title="^Steam$"] floating disable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="^Steam$" title=".* - Steam"] floating enable
+
+#locking
+
+set $Locker i3lock && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+#Keyboard shortcuts
+
+bindsym $mod+Pause mode "$mode_system"
+bindsym --release Shift+Print exec "scrot -s ~/screenshots/%Y-%m-%d-%T-screenshot.png"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5%"
+#bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 1 +5%"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5%"
+#bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 1 -5%"
+
+bindsym $mod+Next exec --no-startup-id "/home/james/.config/sound/switch_device.sh 1"
+bindsym $mod+Prior exec --no-startup-id "/home/james/.config/sound/switch_device.sh 0" 
+
+bindsym XF86AudioPlay exec --no-startup-id "/home/james/.config/sound/play_pause.sh"
