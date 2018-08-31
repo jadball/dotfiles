@@ -185,6 +185,7 @@ exec --no-startup-id nm-applet
 exec mpd
 exec volumeicon
 exec blueman-applet
+exec redshift-gtk
 
 #colours
 
@@ -256,3 +257,6 @@ bindsym $mod+Next exec --no-startup-id "/home/james/.config/sound/switch_device.
 bindsym $mod+Prior exec --no-startup-id "/home/james/.config/sound/switch_device.sh 0" 
 
 bindsym XF86AudioPlay exec --no-startup-id "/home/james/.config/sound/play_pause.sh"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle"
+bindsym XF86Mail exec thunderbird
+
