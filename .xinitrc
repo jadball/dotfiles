@@ -42,5 +42,9 @@ fi
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
 setxkbmap gb
+
+numlockx &
+
 exec i3
 #exec xss-lock -- i3lock -n -i ~/Wallpapers/44797-arch-linux-on-colorful-stripes-1280x800-computer-wallpaper.png -t
+systemctl --user import-environment DISPLAY
