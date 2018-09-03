@@ -95,4 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias openvpnaws="sudo openvpn --config /home/james/.openvpn/laptop.ovpn"
+alias nano='vim'
+alias scrots='scrot -s ~/screenshots/%Y-%m-%d-%T-screenshot.png'
+source /usr/share/doc/pkgfile/command-not-found.zsh
+alias please='sudo $(fc -ln -1)'
