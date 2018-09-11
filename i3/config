@@ -138,7 +138,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock i3
-bindsym $mod+Shift+x exec "~/.config/i3/lock.sh ~/Wallpapers/lockicon.png "
+#bindsym $mod+Shift+x exec "~/.config/i3/lock.sh ~/Wallpapers/lockicon.png "
+bindsym $mod+Shift+x exec "~/.config/i3lock/lock.sh"
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -181,11 +182,10 @@ bar {
 }
 
 #applets
-exec --no-startup-id nm-applet
-exec mpd
 exec volumeicon
 exec blueman-applet
 exec redshift-gtk
+exec mpd
 
 #colours
 
@@ -197,8 +197,7 @@ set $urgent-bg-color #E53935
 
 #screens
 
-exec_always feh --bg-scale /home/james/Wallpapers/astolfo.png
-exec ~/.screenlayout/3_right_monitors.sh
+exec "~/.screenlayout/3_right_monitors.sh; feh --bg-scale /home/james/Wallpapers/astolfo.png"
 exec_always compton -b
 
 #i3-gaps settings
@@ -228,7 +227,7 @@ for_window [class="^Steam$" title=".* - Steam"] floating enable
 
 #locking
 
-set $Locker i3lock && sleep 1
+set $Locker ~/.config/i3lock/lock.sh && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
